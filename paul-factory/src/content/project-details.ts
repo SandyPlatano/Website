@@ -184,7 +184,7 @@ const detailCollection: Record<string, ProjectDetail> = {
         "Regional sales teams needed a searchable, trusted dataset for multi-location prospects. We built a custom application with Clay and low-code tooling that aggregates listings, verifies counts, and exports clean spreadsheets instantly.",
         "The UI mirrors familiar RevOps dashboards so that adoption is immediate—reps can filter by region, industry, and revenue band without leaving the workspace."
       ],
-      websiteUrl: "https://www.gtmbyferm.com"
+      websiteUrl: "https://www.gtmwithferm.com"
     },
     meta: [
       {

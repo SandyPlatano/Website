@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { JSX } from "react";
 import HeroSection from "@/components/hero-section";
 import RotatingText from "@/components/rotating-text";

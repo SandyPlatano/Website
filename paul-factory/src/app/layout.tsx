@@ -17,8 +17,8 @@ const ebGaramond = EB_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "GTMbyFerm",
-  description: "Go-to-market systems engineered by GTMbyFerm using Next.js and Tailwind CSS."
+  title: "GTMwithFerm",
+  description: "Go-to-market systems engineered by GTMwithFerm using Next.js and Tailwind CSS."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

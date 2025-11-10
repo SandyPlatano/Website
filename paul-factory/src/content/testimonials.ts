@@ -18,7 +18,7 @@ export const testimonials: Testimonial[] = [
     project: "Workflow automation overhaul",
     avatar:
       "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=256&auto=format&fit=crop",
-    projectUrl: "/projects"
+    projectUrl: "/#projects"
   },
   {
     client: "InnovateSphere",
@@ -29,7 +29,7 @@ export const testimonials: Testimonial[] = [
     project: "Revenue data enrichment",
     avatar:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=256&auto=format&fit=crop",
-    projectUrl: "/projects"
+    projectUrl: "/#projects"
   },
   {
     client: "CloudScale",
@@ -40,7 +40,7 @@ export const testimonials: Testimonial[] = [
     project: "Enablement dashboard design",
     avatar:
       "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=256&auto=format&fit=crop",
-    projectUrl: "/projects"
+    projectUrl: "/#projects"
   },
   {
     client: "DataPro",
@@ -51,7 +51,7 @@ export const testimonials: Testimonial[] = [
     project: "Outbound automation system",
     avatar:
       "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=256&auto=format&fit=crop",
-    projectUrl: "/projects"
+    projectUrl: "/#projects"
   },
   {
     client: "FutureNet",
@@ -62,7 +62,7 @@ export const testimonials: Testimonial[] = [
     project: "GTM operations playbook",
     avatar:
       "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=256&auto=format&fit=crop",
-    projectUrl: "/projects"
+    projectUrl: "/#projects"
   }
 ];
 

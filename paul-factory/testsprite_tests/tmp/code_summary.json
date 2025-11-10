@@ -1,0 +1,163 @@
+{
+  "tech_stack": [
+    "TypeScript",
+    "Next.js 14",
+    "React 18",
+    "Tailwind CSS",
+    "GSAP",
+    "Three.js",
+    "Matter.js",
+    "Motion",
+    "Canvas Confetti"
+  ],
+  "features": [
+    {
+      "name": "Navigation System",
+      "description": "Header navigation with scroll detection, mobile navigation menu, and footer with social links",
+      "files": [
+        "src/components/header.tsx",
+        "src/components/footer.tsx",
+        "src/components/mobile-nav.tsx",
+        "src/components/pill-nav.tsx",
+        "src/content/navigation.ts"
+      ]
+    },
+    {
+      "name": "Hero Section",
+      "description": "Reusable hero section component with title, description, image, and action buttons",
+      "files": [
+        "src/components/hero-section.tsx"
+      ]
+    },
+    {
+      "name": "Rotating Text Animation",
+      "description": "Animated text component that rotates through multiple text options with stagger effects",
+      "files": [
+        "src/components/rotating-text.tsx"
+      ]
+    },
+    {
+      "name": "Project Portfolio",
+      "description": "Project cards display with featured projects, project detail pages, and project data management",
+      "files": [
+        "src/components/project-card.tsx",
+        "src/app/projects/[slug]/page.tsx",
+        "src/content/projects.ts",
+        "src/content/project-details.ts"
+      ]
+    },
+    {
+      "name": "Contact Form",
+      "description": "Contact page with form inputs, email/phone display, and social media links",
+      "files": [
+        "src/app/contact/page.tsx",
+        "src/content/contact.ts"
+      ]
+    },
+    {
+      "name": "About Page",
+      "description": "About page displaying skills, toolset, and personal information",
+      "files": [
+        "src/app/about/page.tsx",
+        "src/content/about.ts"
+      ]
+    },
+    {
+      "name": "Services Page",
+      "description": "Services display page with service cards and descriptions",
+      "files": [
+        "src/app/services/page.tsx",
+        "src/components/service-card.tsx",
+        "src/content/services.ts"
+      ]
+    },
+    {
+      "name": "Clients Page",
+      "description": "Clients showcase page with logo cloud and client information",
+      "files": [
+        "src/app/clients/page.tsx",
+        "src/components/logo-cloud.tsx",
+        "src/components/LogoLoop.tsx",
+        "src/content/clients.ts"
+      ]
+    },
+    {
+      "name": "Legal Page",
+      "description": "Legal information and terms page",
+      "files": [
+        "src/app/legal/page.tsx",
+        "src/content/legal.ts"
+      ]
+    },
+    {
+      "name": "UI Components",
+      "description": "Reusable UI components including buttons, cards, sections, containers, and grids",
+      "files": [
+        "src/components/cta-button.tsx",
+        "src/components/squircle-card.tsx",
+        "src/components/SpotlightCard.tsx",
+        "src/components/page-section.tsx",
+        "src/components/section-heading.tsx",
+        "src/components/container.tsx",
+        "src/components/auto-grid.tsx"
+      ]
+    },
+    {
+      "name": "Testimonials",
+      "description": "Testimonial cards and display system",
+      "files": [
+        "src/components/testimonial-card.tsx",
+        "src/content/testimonials.ts"
+      ]
+    },
+    {
+      "name": "Interactive Components",
+      "description": "Advanced interactive components including scroll journey, systems radar, and logo animations",
+      "files": [
+        "src/components/scroll-journey.tsx",
+        "src/components/systems-radar.tsx"
+      ]
+    },
+    {
+      "name": "Icons",
+      "description": "Custom icon components for social media and external services",
+      "files": [
+        "src/components/icons/calendly.tsx",
+        "src/components/icons/linkedin.tsx",
+        "src/components/icons/ribbon.tsx"
+      ]
+    },
+    {
+      "name": "Home Page",
+      "description": "Main landing page with hero section, featured projects, and about section",
+      "files": [
+        "src/app/page.tsx"
+      ]
+    },
+    {
+      "name": "Layout and Styling",
+      "description": "Root layout with fonts, global styles, and metadata configuration",
+      "files": [
+        "src/app/layout.tsx",
+        "src/app/globals.css",
+        "src/app/not-found.tsx"
+      ]
+    },
+    {
+      "name": "Utilities",
+      "description": "Utility functions for class name merging and common helpers",
+      "files": [
+        "src/lib/cn.ts",
+        "src/lib/utils.ts"
+      ]
+    },
+    {
+      "name": "Site Configuration",
+      "description": "Site-wide configuration including site info and metadata",
+      "files": [
+        "src/content/site.ts"
+      ]
+    }
+  ]
+}
+

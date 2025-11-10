@@ -10,7 +10,7 @@ export default function LegalPage() {
         <SectionHeading
           eyebrow="Legal notice"
           title="Legal placeholder information for the replica experience."
-          description="Replace this content with your verified legal data before publishing. Structure mirrors the GTMbyFerm legal page."
+          description="Replace this content with your verified legal data before publishing. Structure mirrors the GTMwithFerm legal page."
         />
 
         <div className="space-y-10 text-sm leading-relaxed text-pf-charcoal/80">

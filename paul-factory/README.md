@@ -1,6 +1,6 @@
-# GTMbyFerm
+# GTMwithFerm
 
-GTMbyFerm is a go-to-market systems site built with Next.js 14 (App Router) and Tailwind CSS.  
+GTMwithFerm is a go-to-market systems site built with Next.js 14 (App Router) and Tailwind CSS.  
 All imagery and copy are placeholder assets sourced from open-license networks to be replaced with your own content.
 
 ## Getting Started
@@ -16,11 +16,11 @@ pnpm build     # production build
 
 ## Structure
 
-- `src/app` – App Router pages mirroring the GTMbyFerm sitemap (excluding the Play page).
+- `src/app` – App Router pages mirroring the GTMwithFerm sitemap (excluding the Play page).
 - `src/components` – Shared UI primitives: layout shell, navigation, cards, CTA buttons, grids.
 - `src/content` – Typed data objects feeding cards and sections with placeholder text/images.
 - `public/` – Reserved for static assets; add your own logos and imagery here.
-- `tailwind.config.ts` – Theme tokens (colors, typography, spacing) referencing the GTMbyFerm visual system.
+- `tailwind.config.ts` – Theme tokens (colors, typography, spacing) referencing the GTMwithFerm visual system.
 
 ## Placeholder Assets
 

@@ -1,0 +1,16 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:3000",
+  "executionArgs": {
+    "projectName": "paul-factory",
+    "projectPath": "/Users/ferm/Desktop/Website/paul-factory",
+    "testIds": [],
+    "additionalInstruction": "",
+    "envs": {
+      "API_KEY": "sk-user-iC2JAGOwU5HddDCMgtNd4tcevjNBvmhvSS42xEcsRKEQlM6WYrJg-Z-_BQcJrWZ6NeI63jDeXhdE4U0J0Xn9I_eSVcIQfOdZTocc7sIlwfnMRKHfBTvSVswDbeN_sIQ8EF8"
+    }
+  },
+  "proxy": "http://c348029b-e21a-4b55-9982-9d3f4979a519:r5TrqCgdLyt6pGjZeeY5GA3eoI8A4xxb@tun.testsprite.com:8080"
+}

@@ -2,30 +2,41 @@ import Container from "@/components/container";
 import { CalendlyIcon } from "@/components/icons/calendly";
 import { LinkedInIcon } from "@/components/icons/linkedin";
 import { siteInfo } from "@/content/site";
+import Link from "next/link";
 
-const footerLinks = [
+const getCalendlyUrl = () => "https://calendly.com/gtmbyferm/30min";
+
+const footerLinksBase = [
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/fermin-andujar/",
     external: true,
     Icon: LinkedInIcon
-  },
-  {
-    label: "Book time",
-    href: "https://calendly.com/gtmbyferm/30min?month=2025-11",
-    external: true,
-    Icon: CalendlyIcon
   }
 ] as const;
 
+const legalLinks = [
+  { href: "/legal", label: "Legal" }
+] as const;
+
 export default function Footer() {
+  const footerLinks = [
+    ...footerLinksBase,
+    {
+      label: "Book time",
+      href: getCalendlyUrl(),
+      external: true,
+      Icon: CalendlyIcon
+    }
+  ];
+
   return (
     <footer className="border-t border-pf-charcoal/10 bg-white/80">
       <Container className="py-12">
         <div className="grid gap-10 md:grid-cols-[1.4fr,1fr] md:items-end">
           <div className="space-y-6">
             <div className="space-y-3">
-              <h3 className="text-3xl font-semibold leading-tight text-pf-accent md:text-4xl">GTMbyFerm</h3>
+              <h3 className="text-3xl font-semibold leading-tight text-pf-accent md:text-4xl">GTMwithFerm</h3>
               <p className="max-w-xl text-base text-pf-muted md:text-lg">{siteInfo.tagline}</p>
             </div>
             <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-pf-muted">
@@ -77,9 +88,21 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-10 flex flex-col items-center gap-3">
+        <div className="mt-10 flex flex-col items-center gap-4">
           <span className="inline-block h-px w-full bg-pf-muted/30" aria-hidden="true" />
-          <p className="text-center text-xs text-pf-muted/60">made by Ferm with Cursor</p>
+          <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-pf-muted/70">
+            {legalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="transition-colors hover:text-pf-charcoal"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <span className="inline-block h-3 w-px bg-pf-muted/40" aria-hidden="true" />
+            <p className="text-center text-xs text-pf-muted/60">made by Ferm with Cursor</p>
+          </div>
         </div>
       </Container>
     </footer>

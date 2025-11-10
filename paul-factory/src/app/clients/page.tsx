@@ -12,7 +12,7 @@ export default function ClientsPage() {
       <HeroSection
         eyebrow="Clients"
         title="Placeholder partners across SaaS, retail, culture, and lifestyle."
-        description="This page mirrors the client showcase of GTMbyFerm with typography-based logos sourced from open networks."
+        description="This page mirrors the client showcase of GTMwithFerm with typography-based logos sourced from open networks."
         image={{
           src: "https://images.unsplash.com/photo-1604079628040-94301bb21b71?auto=format&fit=crop&w=960&q=80",
           alt: "Conference meeting room with people collaborating.",
@@ -37,7 +37,7 @@ export default function ClientsPage() {
           <SectionHeading
             eyebrow="Testimonials"
             title="Long-term collaborations thrive on trust."
-            description="Testimonials are repeated from the home page to echo the GTMbyFerm layout."
+            description="Testimonials are repeated from the home page to echo the GTMwithFerm layout."
           />
           <div className="grid gap-6 md:grid-cols-3">
             {testimonials.map((testimonial) => (

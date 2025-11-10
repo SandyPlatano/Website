@@ -1,0 +1,495 @@
+[
+  {
+    "id": "TC001",
+    "title": "Homepage Loads Correctly with All Sections",
+    "description": "Verify that the homepage loads with the hero section, rotating text animation, and featured projects showcase visible and functional.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the homepage URL."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm the hero section is visible with title, description, image, and action buttons."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the rotating text animation cycles through texts smoothly and respects reduced motion preference."
+      },
+      {
+        "type": "assertion",
+        "description": "Check featured projects section displays project cards with correct images and certification badges."
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Rotating Text Animation Accessibility and Performance",
+    "description": "Validate rotating text animation has smooth rotation with configurable interval and supports accessibility features.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Enable reduced motion settings on the device."
+      },
+      {
+        "type": "action",
+        "description": "Load homepage and observe rotating text animation behavior."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that animation respects reduced motion preference by minimizing or disabling animation."
+      },
+      {
+        "type": "action",
+        "description": "Measure animation rotation interval consistency."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm the text changes at configurable intervals smoothly without jank."
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "About Page Content and Resume Download",
+    "description": "Check About page renders personal background, tool stack, skills visualization, and enables resume download.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the About page."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the display of personal background text."
+      },
+      {
+        "type": "assertion",
+        "description": "Check tool stack and skills visualization elements render correctly."
+      },
+      {
+        "type": "action",
+        "description": "Click the resume download link/button."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm the resume file is downloaded successfully and is accessible."
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Contact Page Form Validation and Submission",
+    "description": "Ensure the contact form validates input fields and provides appropriate feedback on successful or failed submission.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Contact page."
+      },
+      {
+        "type": "action",
+        "description": "Attempt to submit the form with empty required fields."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify validation errors are displayed for missing required fields."
+      },
+      {
+        "type": "action",
+        "description": "Input invalid formats (e.g., invalid email) into the form fields."
+      },
+      {
+        "type": "assertion",
+        "description": "Check validation errors for invalid formats are shown."
+      },
+      {
+        "type": "action",
+        "description": "Fill the form correctly with valid name, email, and message."
+      },
+      {
+        "type": "action",
+        "description": "Submit the form."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm the user receives submission success feedback."
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Contact Page Direct Contact Links and Calendly Integration",
+    "description": "Verify that direct contact info links (email, phone) are clickable and Calendly scheduling widget works as expected.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open the Contact page."
+      },
+      {
+        "type": "assertion",
+        "description": "Ensure email and phone links use correct protocols (mailto:, tel:)."
+      },
+      {
+        "type": "action",
+        "description": "Click the email link and verify mail client opens."
+      },
+      {
+        "type": "action",
+        "description": "Click the phone link and verify phone dialer opens on supported devices."
+      },
+      {
+        "type": "assertion",
+        "description": "Check that the Calendly widget loads and is interactive."
+      },
+      {
+        "type": "action",
+        "description": "Attempt to schedule a meeting via the Calendly widget."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify scheduling process completes or Calendly integration flow is properly initialized."
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Projects Showcase Page Project Cards Display and Hover Effects",
+    "description": "Verify project cards are displayed with images, descriptions, and certification badges, and hover effects activate correctly.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to Projects showcase page."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm all project cards are visible with images and certification badges."
+      },
+      {
+        "type": "action",
+        "description": "Hover over each project card."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify hover effects activate smoothly and links to project detail pages are placeholders and non-broken."
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Services Page Service Cards and Call-to-Action",
+    "description": "Validate that service cards with clear descriptions are displayed and CTAs navigate to contact page.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open Services page."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify all service cards render with appropriate descriptions."
+      },
+      {
+        "type": "action",
+        "description": "Click the CTA button on each service card."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm navigation redirects to the Contact page."
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Responsive Header Navigation and Mobile Menu",
+    "description": "Check header navigation functions correctly on desktop and mobile with sticky behavior and mobile menu toggling.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Visit the website on desktop viewport."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm header navigation is visible, links navigate correctly, and sticky behavior works on scroll."
+      },
+      {
+        "type": "action",
+        "description": "Resize viewport to mobile dimensions."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify mobile menu button is visible."
+      },
+      {
+        "type": "action",
+        "description": "Toggle mobile menu open and close."
+      },
+      {
+        "type": "assertion",
+        "description": "Check menu toggling animation is smooth and navigation links are accessible."
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Footer Displays Site Info and Responsive Social & Legal Links",
+    "description": "Ensure footer includes site information, social media links, legal links, and is responsive across device sizes.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Scroll to the footer section on various pages."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm footer displays relevant site info and copyright."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify social media icons and links are clickable and correct."
+      },
+      {
+        "type": "assertion",
+        "description": "Check legal links navigate to correct legal page."
+      },
+      {
+        "type": "action",
+        "description": "Test footer responsiveness on mobile, tablet, and desktop viewports."
+      },
+      {
+        "type": "assertion",
+        "description": "Footer layout adjusts appropriately without content overlap or truncation."
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Content Management Using Typed Content Files",
+    "description": "Test that content can be updated through typed content files and reflects correctly on the web pages without code changes.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Modify content in a typed content file for a visible section (e.g., About page text)."
+      },
+      {
+        "type": "action",
+        "description": "Build and deploy the site reflecting new content."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify updated content renders correctly on the related page."
+      },
+      {
+        "type": "assertion",
+        "description": "Check no UI breakage or code errors occur after content update."
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "Performance Metrics Validation",
+    "description": "Confirm that the site meets performance criteria including LCP < 2.5s, FID < 100ms, CLS < 0.1, and Lighthouse score above 90.",
+    "category": "performance",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Run Lighthouse performance audit on homepage and key pages."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify Largest Contentful Paint (LCP) is under 2.5 seconds."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm First Input Delay (FID) is under 100 milliseconds."
+      },
+      {
+        "type": "assertion",
+        "description": "Ensure Cumulative Layout Shift (CLS) score is less than 0.1."
+      },
+      {
+        "type": "assertion",
+        "description": "Check overall Lighthouse performance score is above 90."
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "Accessibility Compliance for WCAG 2.1 AA",
+    "description": "Validate that all core pages meet WCAG 2.1 AA accessibility standards including keyboard navigation and screen reader support.",
+    "category": "accessibility",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Use keyboard-only navigation to interact with all navigable elements on homepage, About, Contact, Projects, and Services pages."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify all interactive elements are reachable and operable via keyboard."
+      },
+      {
+        "type": "action",
+        "description": "Run screen reader on pages to review content reading order and meaningful labels."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm all images, buttons, links, and form inputs have appropriate aria-labels or accessible names."
+      },
+      {
+        "type": "assertion",
+        "description": "Check color contrast ratios meet WCAG 2.1 AA standards across the site."
+      }
+    ]
+  },
+  {
+    "id": "TC013",
+    "title": "SEO Best Practices Implementation",
+    "description": "Ensure that meta tags, structured data, sitemap, and other SEO features are correctly implemented across the website.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Inspect page source for presence of appropriate meta tags including title, description, and keywords."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify structured data (JSON-LD) is present and valid on key pages."
+      },
+      {
+        "type": "action",
+        "description": "Access sitemap.xml file."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm all core pages are listed in sitemap."
+      },
+      {
+        "type": "action",
+        "description": "Check robots.txt file exists and correctly configured."
+      }
+    ]
+  },
+  {
+    "id": "TC014",
+    "title": "Cross-Browser Compatibility",
+    "description": "Verify site functionality, layout, and animations work correctly on latest versions of major browsers: Chrome, Firefox, Safari, and Edge.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open the website on latest Chrome browser."
+      },
+      {
+        "type": "assertion",
+        "description": "Perform smoke tests for page loading, navigation, and animations."
+      },
+      {
+        "type": "action",
+        "description": "Repeat on latest Firefox, Safari, and Edge browsers."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm no visual or functional regressions across browsers."
+      }
+    ]
+  },
+  {
+    "id": "TC015",
+    "title": "Responsive Design Across Mobile, Tablet, Desktop",
+    "description": "Test that the website layout, navigation menus, CTAs, and interactive animations adapt correctly to mobile, tablet, and desktop screen sizes.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "View site on mobile viewport."
+      },
+      {
+        "type": "assertion",
+        "description": "Check navigation collapses to mobile menu and touch targets are appropriately sized."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify content fits screen dimensions without horizontal scroll."
+      },
+      {
+        "type": "action",
+        "description": "Switch to tablet viewport and repeat layout, navigation, and content checks."
+      },
+      {
+        "type": "action",
+        "description": "Switch to desktop viewport and verify full desktop layout."
+      }
+    ]
+  },
+  {
+    "id": "TC016",
+    "title": "Error Handling for Form Submission Failures",
+    "description": "Validate that the contact form gracefully handles submission errors such as network failures or server errors with user-friendly messages.",
+    "category": "error handling",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Fill the contact form with valid data."
+      },
+      {
+        "type": "action",
+        "description": "Simulate server error or network failure during form submission."
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an appropriate error message is shown to the user."
+      },
+      {
+        "type": "action",
+        "description": "Ensure form inputs remain populated to allow user resubmission."
+      }
+    ]
+  },
+  {
+    "id": "TC017",
+    "title": "Consistent Accessible CTA Buttons Across Site",
+    "description": "Verify that all CTA buttons across pages use consistent styling, are keyboard accessible, and have meaningful labels.",
+    "category": "ui",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Review CTA buttons on homepage, services, about, contact, and projects pages."
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm consistent visual styling for all CTA buttons."
+      },
+      {
+        "type": "assertion",
+        "description": "Check buttons are reachable and actionable via keyboard navigation."
+      },
+      {
+        "type": "assertion",
+        "description": "Validate buttons have accessible names or aria-labels describing their action."
+      }
+    ]
+  }
+]

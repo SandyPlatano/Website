@@ -77,7 +77,7 @@ const config: Config = {
   			'content-wide': '92rem'
   		},
   		boxShadow: {
-  			'card': '0 12px 40px rgba(0, 0, 0, 0.08)'
+  			card: '0 12px 40px rgba(0, 0, 0, 0.08)'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
