@@ -58,22 +58,21 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || "Something went wrong");
-      }
-
+      // For static export, use mailto: link instead of API route
+      const subject = encodeURIComponent(
+        `Contact from ${formData.name}${formData.company ? ` at ${formData.company}` : ""}`
+      );
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}${formData.company ? `\nCompany: ${formData.company}` : ""}\n\nMessage:\n${formData.message}`
+      );
+      const mailtoLink = `mailto:${contactDetails.email}?subject=${subject}&body=${body}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+      
+      // Show success message
       setSubmitStatus("success");
-      setSubmitMessage(data.message || "Thank you for your message! I'll get back to you soon.");
+      setSubmitMessage("Your email client should open. If it doesn't, please email directly at " + contactDetails.email);
       setFormData({ name: "", email: "", company: "", message: "" });
       setErrors({});
     } catch (error) {

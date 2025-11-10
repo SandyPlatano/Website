@@ -28,3 +28,7 @@ node-v*.tar.gz
 
 # Cursor editor artifacts
 .cursor/
+
+# Firebase
+.firebase/
+paul-factory/out/
