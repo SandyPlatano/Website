@@ -1,0 +1,10 @@
+import type { JSX } from "react";
+import HeroSection from "@/components/hero-section";
+import RotatingText from "@/components/rotating-text";
+import PageSection from "@/components/page-section";
+import SectionHeading from "@/components/section-heading";
+import AutoGrid from "@/components/auto-grid";
+import ProjectCard from "@/components/project-card";
+import CTAButton from "@/components/cta-button";
+import LogoLoop, { type LogoLoopItem } from "@/components/logo-loop";
+import { featuredProjects } from "@/content/projects";
