@@ -23,7 +23,7 @@ export default function Footer() {
   const footerLinks = [
     ...footerLinksBase,
     {
-      label: "Book time",
+      label: "Schedule time",
       href: getCalendlyUrl(),
       external: true,
       Icon: CalendlyIcon
@@ -31,7 +31,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-pf-charcoal/10 bg-white/80">
+    <footer id="contact" className="border-t border-pf-charcoal/10 bg-white/80">
       <Container className="py-12">
         <div className="grid gap-10 md:grid-cols-[1.4fr,1fr] md:items-end">
           <div className="space-y-6">

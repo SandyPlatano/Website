@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import HeroSection from "@/components/hero-section";
 import PageSection from "@/components/page-section";
 import SectionHeading from "@/components/section-heading";
@@ -5,6 +6,11 @@ import LogoCloud from "@/components/logo-cloud";
 import CTAButton from "@/components/cta-button";
 import { clients } from "@/content/clients";
 import { testimonials } from "@/content/testimonials";
+
+export const metadata: Metadata = {
+  title: "Clients",
+  description: "Partners and clients across SaaS, retail, culture, and lifestyle. See testimonials from long-term collaborations built on trust.",
+};
 
 export default function ClientsPage() {
   return (
@@ -18,7 +24,7 @@ export default function ClientsPage() {
           alt: "Conference meeting room with people collaborating.",
           caption: "Photography via Unsplash (placeholder)"
         }}
-        actions={[{ href: "/contact", label: "Start a project" }]}
+        actions={[]}
       />
 
       <PageSection>
@@ -61,7 +67,6 @@ export default function ClientsPage() {
             description="Tell us about your goals, timelines, and team structure. We’ll reply with a placeholder collaboration plan ready for customization."
             align="center"
           />
-          <CTAButton href="/contact" label="Book a call" />
         </div>
       </PageSection>
     </>

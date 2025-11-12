@@ -16,9 +16,77 @@ const ebGaramond = EB_Garamond({
   display: "swap"
 });
 
+// TODO: Update this URL with your actual domain before launching
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
+
 export const metadata: Metadata = {
-  title: "GTMwithFerm",
-  description: "Go-to-market systems engineered by GTMwithFerm using Next.js and Tailwind CSS."
+  title: {
+    default: "GTMwithFerm | Go-to-Market Systems Engineer",
+    template: "%s | GTMwithFerm"
+  },
+  description: "Building go-to-market systems that drive results, remove friction, and amplify teams. Automation playbooks, enrichment workflows, and enablement tools for marketing, sales, and success teams.",
+  keywords: ["go-to-market", "GTM", "revenue operations", "RevOps", "sales automation", "marketing automation", "Clay", "CRM enrichment", "sales enablement"],
+  authors: [{ name: "Fermin Andujar" }],
+  creator: "Fermin Andujar",
+  publisher: "GTMwithFerm",
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "GTMwithFerm",
+    title: "GTMwithFerm | Go-to-Market Systems Engineer",
+    description: "Building go-to-market systems that drive results, remove friction, and amplify teams.",
+    // TODO: Add your Open Graph image (1200x630px recommended)
+    // images: [
+    //   {
+    //     url: "/og-image.jpg",
+    //     width: 1200,
+    //     height: 630,
+    //     alt: "GTMwithFerm - Go-to-Market Systems Engineer",
+    //   },
+    // ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GTMwithFerm | Go-to-Market Systems Engineer",
+    description: "Building go-to-market systems that drive results, remove friction, and amplify teams.",
+    creator: "@yourtwitterhandle", // TODO: Add your Twitter handle
+    // TODO: Add your Twitter image (1200x675px recommended)
+    // images: ["/twitter-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    // TODO: Add your verification codes if you have them
+    // google: "your-google-verification-code",
+    // yandex: "your-yandex-verification-code",
+    // yahoo: "your-yahoo-verification-code",
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      // TODO: Add these icon files to public/ folder before launch
+      // { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      // { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      // TODO: Add apple-touch-icon.png to public/ folder
+      // { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

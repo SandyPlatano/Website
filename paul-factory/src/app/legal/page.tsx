@@ -1,7 +1,17 @@
+import type { Metadata } from "next";
 import PageSection from "@/components/page-section";
 import SectionHeading from "@/components/section-heading";
 import Container from "@/components/container";
 import { legalContent } from "@/content/legal";
+
+export const metadata: Metadata = {
+  title: "Legal",
+  description: "Legal information, terms of service, and privacy policy for GTMwithFerm.",
+  robots: {
+    index: false, // Legal pages often shouldn't be indexed
+    follow: true,
+  },
+};
 
 export default function LegalPage() {
   return (

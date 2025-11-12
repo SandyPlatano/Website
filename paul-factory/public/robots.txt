@@ -1,0 +1,11 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# TODO: Update this URL with your actual domain before launching
+Sitemap: https://yourdomain.com/sitemap.xml
+
+# Disallow admin or private areas if you add them later
+# Disallow: /admin/
+# Disallow: /api/
+

@@ -16,7 +16,6 @@ export default function NotFound() {
         />
         <div className="flex flex-wrap items-center justify-center gap-4">
           <CTAButton href="/" label="Back to homepage" />
-          <CTAButton href="/contact" variant="ghost" label="Book a discovery call" />
         </div>
       </div>
     </PageSection>

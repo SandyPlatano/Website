@@ -5,31 +5,11 @@ import ProjectCard from "@/components/project-card";
 import CTAButton from "@/components/cta-button";
 import RotatingText from "@/components/rotating-text";
 import HeroSection from "@/components/hero-section";
-import FeaturedProjectCard from "@/components/featured-project-card";
+import ToolsetSection from "@/components/toolset-section";
 import { featuredProjects } from "@/content/projects";
-import Image from "next/image";
 
 export default function HomePage() {
-  const inboundProject = featuredProjects.find((project) => project.slug === "clay-inbound-automation");
-  const supportingProjects = featuredProjects.filter((project) => project.slug !== "clay-inbound-automation").slice(0, 3);
-
-  const inboundHighlights = [
-    {
-      title: "Signal routing",
-      description:
-        "Qualifies inbound submissions instantly with Clay enrichment, form metadata, and intent signals before routing to HubSpot."
-    },
-    {
-      title: "Revenue-ready context",
-      description:
-        "Builds a complete account record—buying committee, firmographics, and product usage—without asking the prospect twice."
-    },
-    {
-      title: "Team activation",
-      description:
-        "Pushes prioritized alerts to Slack, email, and HubSpot queues so marketing, sales, and success respond with the right play."
-    }
-  ];
+  const allProjects = featuredProjects;
 
   return (
     <>
@@ -46,100 +26,81 @@ export default function HomePage() {
             />
           </>
         }
-        description="Hello! I'm Fermin, an aspiring go-to-market engineer."
+        description="Hello! I&apos;m Fermin, an aspiring go-to-market engineer."
         image={{
-          src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=960&q=80",
-          alt: "A specialist mapping out automated workflows on a desk with a laptop and tablet."
+          src: "/convention-hall.jpeg",
+          alt: "Fermin at the IFA Convention in Las Vegas"
         }}
         actions={[
-          { href: "#projects", label: "View work" },
-          { href: "/contact", label: "Contact Ferm", variant: "ghost" }
+          { href: "#projects", label: "View work" }
         ]}
       />
 
       <PageSection id="projects" innerClassName="py-16 md:py-20 lg:py-24">
-        <div className="space-y-14">
+        <div className="space-y-12 md:space-y-16">
           <SectionHeading
             title="Clay certifications and GTM builds"
             description="Automation playbooks, enrichment workflows, and enablement tools crafted for marketing, sales, and success teams."
             align="center"
+            size="small"
           />
-          <div className="mx-auto flex w-full max-w-6xl flex-col gap-12">
-            {inboundProject ? (
-              <FeaturedProjectCard project={inboundProject} highlights={inboundHighlights} />
-            ) : null}
-
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
-              {supportingProjects.map((project) => (
-              <ProjectCard key={project.slug} project={project} variant="compact" />
-            ))}
+          <div className="mx-auto w-full max-w-6xl">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:gap-10">
+              {allProjects.map((project) => (
+                <ProjectCard key={project.slug} project={project} variant="compact" />
+              ))}
             </div>
           </div>
         </div>
       </PageSection>
 
-      <PageSection bleed className="bg-primary-background py-16 md:py-20 lg:py-24">
+      <PageSection id="about" bleed className="bg-primary-background py-16 md:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-content-wide rounded-3xl bg-white/70 px-6 py-12 shadow-card md:px-10 md:py-16 lg:px-16 lg:py-20">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-stretch">
-            <div className="w-full max-w-3xl space-y-6 rounded-3xl border border-secondary-dark/10 bg-white/80 p-8 shadow-inner md:max-w-5xl lg:max-w-none lg:h-full">
-              <div className="space-y-3">
-                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-secondary-dark/60">Inside the lab</p>
-                <h3 className="text-2xl font-semibold uppercase tracking-[0.2em] text-secondary-dark">Learn more about Ferm</h3>
-                <p className="text-sm leading-relaxed text-secondary-dark/80 md:text-base">
-                  I combine revenue operations, automation design, and storytelling to launch GTM systems that scale with the team.
-                  Dive into current experiments, certifications, and the GTM philosophies that keep me curious.
-                </p>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-secondary-dark/10 bg-secondary-dark/5 p-5">
-                  <p className="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-secondary-dark/60">Current focus</p>
-                  <p className="mt-2 text-base font-semibold text-secondary-dark">Improving in Cursor</p>
+          <div className="grid gap-10 lg:grid-cols-1 lg:items-stretch">
+            <div className="w-full max-w-3xl space-y-8 rounded-3xl border border-sky-400/40 bg-[#03111F] p-8 text-white md:max-w-5xl md:p-12 md:space-y-10 lg:max-w-none lg:h-full lg:p-16">
+              <div className="space-y-8 md:space-y-10">
+                <div className="space-y-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.35em] text-sky-200/75">About</p>
+                  <h3 className="text-2xl font-semibold uppercase tracking-[0.2em] text-white md:text-3xl">About Ferm</h3>
+                  <div className="space-y-4 md:space-y-5">
+                    <p className="text-sm leading-relaxed text-sky-100/90 md:text-base">
+                      Hey, I&apos;m Fermin (Ferm), formerly a personal trainer and massage therapist turned BDR, now an aspiring go-to-market engineer focused on systems that let teams spend more time with customers.
+                    </p>
+                    <p className="text-sm leading-relaxed text-sky-100/90 md:text-base">
+                      I&apos;m particularly passionate about helping teams escape the busywork trap so they can focus on what matters: genuine problem-solving and relationship building.
+                    </p>
+                    <p className="text-sm leading-relaxed text-sky-100/90 md:text-base">
+                      You can catch me competing in beach volleyball, hiking or dancing bachata.
+                    </p>
+                  </div>
                 </div>
-                <div className="rounded-2xl border border-secondary-dark/10 bg-secondary-dark/5 p-5">
-                  <p className="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-secondary-dark/60">Recent win</p>
-                  <p className="mt-2 text-base font-semibold text-secondary-dark">Built this website with Cursor</p>
+
+                <div className="grid gap-4 sm:grid-cols-2 md:gap-5">
+                  <div className="rounded-2xl border border-white/10 bg-white/10 p-5 md:p-6">
+                    <p className="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-sky-100/70">Current focus</p>
+                    <p className="mt-2 text-base font-semibold text-white md:text-lg">Learning Cursor</p>
+                  </div>
+                  <div className="rounded-2xl border border-white/10 bg-white/10 p-5 md:p-6">
+                    <p className="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-sky-100/70">Recent win</p>
+                    <p className="mt-2 text-base font-semibold text-white md:text-lg">Built this website with Cursor</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-3 sm:flex-row pt-2">
+                  <CTAButton 
+                    href="/resume.pdf" 
+                    label="Download Resume" 
+                    className="border-white/20 bg-white/90 text-[#03111F] hover:bg-white uppercase tracking-[0.3em]"
+                    download
+                  />
                 </div>
               </div>
-
-              <ul className="space-y-2 text-sm leading-relaxed text-secondary-dark/80 md:text-base">
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-secondary-dark" aria-hidden />
-                  <span>See how automation-first playbooks help activate SDR and CS teams faster.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-secondary-dark" aria-hidden />
-                  <span>Explore the frameworks I use to translate messy data into actionable sequences.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-secondary-dark" aria-hidden />
-                  <span>Get a snapshot of my certifications, favorite tools, and collaboration style.</span>
-                </li>
-              </ul>
-
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <CTAButton href="/about" label="About Ferm" className="uppercase tracking-[0.3em]" />
-                <CTAButton
-                  href="/contact"
-                  label="Contact"
-                  variant="ghost"
-                  className="uppercase tracking-[0.3em]"
-                />
-              </div>
-            </div>
-            <div className="relative order-last h-72 overflow-hidden rounded-3xl border border-secondary-dark/10 bg-secondary-dark/5 shadow-inner sm:order-none sm:h-96 lg:h-full">
-              <Image
-                src="https://images.unsplash.com/photo-1451188502541-13943edb6acb?auto=format&fit=crop&w=900&q=80"
-                alt="Ferm working through workflow experiments on a whiteboard."
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 28rem, 100vw"
-              />
             </div>
           </div>
         </div>
       </PageSection>
 
+      <ToolsetSection />
     </>
   );
 }

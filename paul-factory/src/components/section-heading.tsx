@@ -8,6 +8,7 @@ type SectionHeadingProps = {
   align?: "left" | "center";
   className?: string;
   tone?: "light" | "dark";
+  size?: "default" | "small" | "large";
 };
 
 export default function SectionHeading({
@@ -16,8 +17,15 @@ export default function SectionHeading({
   description,
   align = "left",
   className,
-  tone = "light"
+  tone = "light",
+  size = "default"
 }: SectionHeadingProps) {
+  const titleSizeClass = {
+    small: "text-xl font-semibold leading-tight md:text-2xl",
+    default: "text-2xl font-semibold leading-tight md:text-3xl",
+    large: "text-3xl font-semibold leading-tight md:text-4xl"
+  }[size];
+
   return (
     <div className={cn("space-y-4", align === "center" && "text-center", className)}>
       {eyebrow ? (
@@ -30,7 +38,7 @@ export default function SectionHeading({
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="text-3xl font-semibold leading-tight md:text-4xl">{title}</h2>
+      <h2 className={titleSizeClass}>{title}</h2>
       {description ? (
         <p
           className={cn(

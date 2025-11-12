@@ -15,6 +15,7 @@ type PillNavProps = {
   items: readonly PillNavItem[];
   logoSrc?: string;
   logoAlt?: string;
+  logoText?: string;
   activeHref?: string;
   className?: string;
   ease?: string;
@@ -24,6 +25,10 @@ type PillNavProps = {
   pillTextColor?: string;
   onMobileMenuClick?: () => void;
   initialLoadAnimation?: boolean;
+  navHeight?: string;
+  pillPadding?: string;
+  fontSize?: string;
+  hideLogo?: boolean;
 };
 
 function isExternalLink(href: string) {
@@ -33,7 +38,8 @@ function isExternalLink(href: string) {
     href.startsWith("//") ||
     href.startsWith("mailto:") ||
     href.startsWith("tel:") ||
-    href.startsWith("#")
+    href.startsWith("#") ||
+    href.includes("#") // Treat any link with # as anchor link (e.g., /#about)
   );
 }
 
@@ -41,6 +47,7 @@ export default function PillNav({
   items,
   logoSrc = "/favicon.ico",
   logoAlt = "Logo",
+  logoText,
   activeHref,
   className,
   ease = "power3.easeOut",
@@ -49,7 +56,11 @@ export default function PillNav({
   hoveredPillTextColor = "#060010",
   pillTextColor,
   onMobileMenuClick,
-  initialLoadAnimation = true
+  initialLoadAnimation = true,
+  navHeight = "30px",
+  pillPadding = "12px",
+  fontSize = "14px",
+  hideLogo = false
 }: PillNavProps) {
   const resolvedPillTextColor = pillTextColor ?? baseColor;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -277,20 +288,52 @@ export default function PillNav({
     onMobileMenuClick?.();
   };
 
+  const logoSize = `calc(${navHeight} - 2px)`;
+  
   const cssVars: Record<string, string> = {
     "--base": baseColor,
     "--pill-bg": pillColor,
     "--hover-text": hoveredPillTextColor,
     "--pill-text": resolvedPillTextColor,
-    "--nav-h": "36px",
-    "--logo": "32px",
-    "--pill-pad-x": "14px",
+    "--nav-h": navHeight,
+    "--logo": logoSize,
+    "--pill-pad-x": pillPadding,
     "--pill-gap": "2px"
   };
 
   const renderLogo = () => {
+    // If logoText is provided, render as text logo
+    if (logoText) {
+      const homeHref = internalItems?.[0]?.href || "/";
+      const logoContent = (
+        <span
+          className="text-3xl font-semibold leading-tight text-pf-accent md:text-4xl"
+          ref={(el) => {
+            logoRef.current = el;
+          }}
+        >
+          {logoText}
+        </span>
+      );
+
+      if (isExternalLink(homeHref)) {
+        return (
+          <a href={homeHref} aria-label="Home" className="no-underline">
+            {logoContent}
+          </a>
+        );
+      }
+
+      return (
+        <Link href={homeHref} aria-label="Home" className="no-underline">
+          {logoContent}
+        </Link>
+      );
+    }
+
+    // Otherwise, render as image logo (original behavior)
     const logoClasses =
-      "rounded-full p-2 inline-flex items-center justify-center overflow-hidden";
+      "rounded-full p-1.5 inline-flex items-center justify-center overflow-hidden";
     const style = {
       width: "var(--nav-h)",
       height: "var(--nav-h)",
@@ -352,15 +395,15 @@ export default function PillNav({
   return (
     <div
       className={cn(
-        "relative flex w-full items-center justify-between md:w-auto",
+        "relative flex w-full items-center justify-center gap-8 md:w-auto",
         className
       )}
       style={cssVars}
     >
-      {renderLogo()}
+      {!hideLogo && renderLogo()}
       <div
         ref={navItemsRef}
-        className="relative ml-2 hidden items-center rounded-full md:flex"
+        className="relative hidden items-center rounded-full md:flex"
         style={{
           height: "var(--nav-h)",
           background: "var(--base, #000)"
@@ -382,7 +425,11 @@ export default function PillNav({
             };
 
             const basePillClasses =
-              "relative inline-flex h-full cursor-pointer items-center justify-center overflow-hidden rounded-full px-0 text-[16px] font-semibold uppercase tracking-[0.2px] text-current no-underline";
+              `relative inline-flex h-full cursor-pointer items-center justify-center overflow-hidden rounded-full px-0 font-semibold uppercase tracking-[0.2px] text-current no-underline`;
+            
+            const pillTextStyle: React.CSSProperties = {
+              fontSize: fontSize
+            };
 
             const pillContent = (
               <>
@@ -397,13 +444,14 @@ export default function PillNav({
                 <span className="label-stack relative inline-block leading-[1]">
                   <span
                     className="pill-label relative z-[2] inline-block leading-[1]"
-                    style={{ willChange: "transform" }}
+                    style={{ ...pillTextStyle, willChange: "transform" }}
                   >
                     {item.label}
                   </span>
                   <span
                     className="pill-label-hover absolute left-0 top-0 z-[3] inline-block translate-y-full opacity-0"
                     style={{
+                      ...pillTextStyle,
                       color: "var(--hover-text, #fff)",
                       willChange: "transform, opacity",
                       pointerEvents: "none"
@@ -507,7 +555,11 @@ export default function PillNav({
             };
 
             const linkClasses =
-              "block rounded-[50px] px-4 py-3 text-[16px] font-medium transition-all duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)]";
+              "block rounded-[50px] px-4 py-3 font-medium transition-all duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)]";
+            
+            const mobileLinkStyle: React.CSSProperties = {
+              fontSize: fontSize
+            };
 
             const handleClose = () => {
               setIsMobileMenuOpen(false);
@@ -519,7 +571,7 @@ export default function PillNav({
                   <a
                     href={item.href}
                     className={linkClasses}
-                    style={defaultStyle}
+                    style={{ ...defaultStyle, ...mobileLinkStyle }}
                     onMouseEnter={hoverIn}
                     onMouseLeave={hoverOut}
                     onClick={handleClose}
@@ -535,7 +587,7 @@ export default function PillNav({
                 <Link
                   href={item.href}
                   className={linkClasses}
-                  style={defaultStyle}
+                  style={{ ...defaultStyle, ...mobileLinkStyle }}
                   onMouseEnter={hoverIn}
                   onMouseLeave={hoverOut}
                   onClick={handleClose}

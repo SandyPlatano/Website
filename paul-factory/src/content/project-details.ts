@@ -35,16 +35,16 @@ const detailCollection: Record<string, ProjectDetail> = {
       eyebrow: "Projects",
       title: "Clay — Inbound Automation",
       description:
-        "Certified inbound automation flows that qualify inbound leads, sync enriched data, and notify revenue teams in real time.",
+        "This Clay build pulls location data, expansion signals, acquisitions, and competitive intel to route leads to the right rep, then enriches everything and pushes it to HubSpot and Slack. Sales reps know who they are talking to before they pick up the phone.",
       actionsLogo: {
-        src: "/Clay%20Logo/Clay_Logo_Primary_Blk.svg",
+        src: "/clay-logo/Clay_Logo_Primary_Blk.svg",
         alt: "Clay logo",
         width: 200,
         height: 63,
         className: "h-8 md:h-10"
       },
       image: {
-        src: "/inbound-automation-certification.png",
+        src: "/inbound-automation-certification-removebg-preview.png",
         alt: "Clay inbound automation certification badge.",
         caption: "Image courtesy of Clay"
       }
@@ -78,16 +78,16 @@ const detailCollection: Record<string, ProjectDetail> = {
       eyebrow: "Projects",
       title: "Clay — CRM Enrichment",
       description:
-        "Data enrichment playbooks that keep CRM records fresh with revenue signals, buying committees, and intent scoring.",
+        "This workflow enriches inbound leads from HubSpot by finding missing company domains, validating work emails, enriching LinkedIn profiles, standardizing job titles, analyzing LinkedIn activity and tenure, checking for previous company connections, and syncing all the enriched data back to HubSpot.",
       actionsLogo: {
-        src: "/Clay%20Logo/Clay_Logo_Primary_Blk.svg",
+        src: "/clay-logo/Clay_Logo_Primary_Blk.svg",
         alt: "Clay logo",
         width: 200,
         height: 63,
         className: "h-8 md:h-10"
       },
       image: {
-        src: "/crm-enrichment-certification.png",
+        src: "/crm-enrichment-certification-removebg-preview.png",
         alt: "Clay CRM enrichment certification badge.",
         caption: "Image courtesy of Clay"
       }
@@ -121,16 +121,16 @@ const detailCollection: Record<string, ProjectDetail> = {
       eyebrow: "Projects",
       title: "Clay — Outbound Certification",
       description:
-        "Outbound automation and sales outreach sequences that balance scale with personalization across the GTM stack.",
+        "This workflow finds YouTube creators' emails, analyzes their content and business model, then generates personalized cold outreach emails pitching Circle, so based on whether they're high-growth, offer courses, or need general community solutions.",
       actionsLogo: {
-        src: "/Clay%20Logo/Clay_Logo_Primary_Blk.svg",
+        src: "/clay-logo/Clay_Logo_Primary_Blk.svg",
         alt: "Clay logo",
         width: 200,
         height: 63,
         className: "h-8 md:h-10"
       },
       image: {
-        src: "/outbound-automation-certification.png",
+        src: "/outbound-automation-certification-removebg-preview.png",
         alt: "Clay outbound automation certification badge.",
         caption: "Image courtesy of Clay"
       }
@@ -162,20 +162,20 @@ const detailCollection: Record<string, ProjectDetail> = {
     slug: "revenue-research-app",
     hero: {
       eyebrow: "Projects",
-      title: "Location Research Custom App",
+      title: "Location Research Cursor App",
       description:
         "In-house web app for sales reps that reveals how many locations a given company operates with ready-to-use data exports.",
       actionsLogo: {
-        src: "/cursor-brand-assets-20250924/General%20Logos/Cube/SVG/CUBE_2D_DARK.svg",
-        alt: "Cursor cube logo",
+        src: "/cursor-brand-assets/logos/cube-2d-black.svg",
+        alt: "Cursor logo",
         width: 128,
         height: 128,
         className: "h-12"
       },
       image: {
-        src: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80",
-        alt: "Sales enablement dashboard on a desktop monitor in a dimly lit office.",
-        caption: "Photo credit: Ales Nesetril via Unsplash"
+        src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+        alt: "Warm, naturally lit workspace with research materials and location data on a desk.",
+        caption: "Photo credit: Scott Graham via Unsplash"
       }
     },
     overview: {
