@@ -1,10 +1,13 @@
 [build]
-  # Base directory: Set to "paul-factory" in Netlify dashboard if deploying from repo root
-  # If netlify.toml is in the project root, base = "." works
+  # NOTE: If base directory is set in Netlify dashboard to "paul-factory",
+  # then this netlify.toml file is already in that directory, so base = "." is correct
+  # The publish directory will be relative to the base directory
   base = "."
   # Build command
   command = "npm run build"
-  # Publish directory: Next.js plugin will override this, but we set it for compatibility
+  # Publish directory: When base directory is "paul-factory" in dashboard,
+  # this should be ".next" (relative to paul-factory directory)
+  # The Next.js plugin will handle routing, but we need to specify the output directory
   publish = ".next"
 
 # Next.js runtime plugin (REQUIRED for Next.js App Router)
