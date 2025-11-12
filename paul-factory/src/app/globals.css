@@ -4,7 +4,7 @@
 
 :root {
   color-scheme: light;
-  background-color: #0a0a0f;
+  background-color: theme("colors.pf-cream");
 }
 
 @layer base {
@@ -17,10 +17,8 @@
   }
 
   body {
-    @apply font-sans text-pf-charcoal;
+    @apply bg-pf-cream font-sans text-pf-charcoal;
     font-feature-settings: "ss03", "liga", "kern";
-    background: transparent;
-    min-height: 100vh;
   }
 
   h1,
@@ -95,31 +93,8 @@ a {
 }
 
 ::selection {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.5), rgba(59, 130, 246, 0.5));
-  color: white;
-}
-
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #764ba2, #f093fb);
+  background-color: theme("colors.pf-accent");
+  color: theme("colors.pf-charcoal");
 }
 
 /* Ensure sr-only class works properly - multiple hiding techniques */
