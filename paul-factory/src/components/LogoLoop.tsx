@@ -352,9 +352,9 @@ export const LogoLoop = React.memo<LogoLoopProps>(
             className={cx(
               "inline-flex items-center",
               "motion-reduce:transition-none",
-              scaleOnHover &&
-                "transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-[1.2]"
+              scaleOnHover && "transition-transform duration-300 group-hover/item:scale-[1.2]"
             )}
+            style={scaleOnHover ? { transitionTimingFunction: "cubic-bezier(0.4,0,0.2,1)" } : undefined}
             aria-hidden={!!(item as any).href && !(item as any).ariaLabel}
           >
             {(item as any).node}
@@ -366,9 +366,9 @@ export const LogoLoop = React.memo<LogoLoopProps>(
               "[-webkit-user-drag:none] pointer-events-none",
               "[image-rendering:-webkit-optimize-contrast]",
               "motion-reduce:transition-none",
-              scaleOnHover &&
-                "transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-[1.2]"
+              scaleOnHover && "transition-transform duration-300 group-hover/item:scale-[1.2]"
             )}
+            style={scaleOnHover ? { transitionTimingFunction: "cubic-bezier(0.4,0,0.2,1)" } : undefined}
             src={(item as any).src}
             srcSet={(item as any).srcSet}
             sizes={(item as any).sizes}

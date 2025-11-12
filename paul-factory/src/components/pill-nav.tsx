@@ -1,5 +1,7 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
+
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { gsap } from "gsap";
@@ -520,12 +522,20 @@ export default function PillNav({
         type="button"
       >
         <span
-          className="hamburger-line h-0.5 w-4 origin-center rounded transition-all duration-[10ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]"
-          style={{ background: "var(--pill-bg, #fff)" }}
+          className="hamburger-line h-0.5 w-4 origin-center rounded transition-all"
+          style={{ 
+            background: "var(--pill-bg, #fff)",
+            transitionDuration: "10ms",
+            transitionTimingFunction: "cubic-bezier(0.25,0.1,0.25,1)"
+          }}
         />
         <span
-          className="hamburger-line h-0.5 w-4 origin-center rounded transition-all duration-[10ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]"
-          style={{ background: "var(--pill-bg, #fff)" }}
+          className="hamburger-line h-0.5 w-4 origin-center rounded transition-all"
+          style={{ 
+            background: "var(--pill-bg, #fff)",
+            transitionDuration: "10ms",
+            transitionTimingFunction: "cubic-bezier(0.25,0.1,0.25,1)"
+          }}
         />
       </button>
 
@@ -555,10 +565,11 @@ export default function PillNav({
             };
 
             const linkClasses =
-              "block rounded-[50px] px-4 py-3 font-medium transition-all duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)]";
+              "block rounded-[50px] px-4 py-3 font-medium transition-all duration-200";
             
             const mobileLinkStyle: React.CSSProperties = {
-              fontSize: fontSize
+              fontSize: fontSize,
+              transitionTimingFunction: "cubic-bezier(0.25,0.1,0.25,1)"
             };
 
             const handleClose = () => {
