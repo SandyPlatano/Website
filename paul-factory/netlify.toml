@@ -3,7 +3,7 @@
 # this file is already in that directory, so base = "." is correct
 
 [build]
-  base = "."
+  base = "paul-factory"
   command = "npm run build"
   # Publish directory: The Next.js plugin will override this automatically
   # But we specify it for compatibility
@@ -13,11 +13,6 @@
 # This plugin MUST be installed and enabled for routing to work
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-  
-  # Plugin configuration
-  [plugins.inputs]
-    # Let the plugin handle everything automatically
-    nextRuntime = "nodejs18.x"
 
 # Environment variables (set these in Netlify dashboard)
 # [build.environment]

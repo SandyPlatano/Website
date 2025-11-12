@@ -1,4 +1,0 @@
-# Netlify redirects for Next.js App Router
-# The Next.js plugin handles most routing, but this is a fallback
-/*    /index.html   200
-

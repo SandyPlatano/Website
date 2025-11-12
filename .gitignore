@@ -32,3 +32,6 @@ node-v*.tar.gz
 # Firebase
 .firebase/
 paul-factory/out/
+
+# Local Netlify folder
+.netlify
