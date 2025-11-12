@@ -7,7 +7,13 @@ const nextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com"
       }
-    ]
+    ],
+    // Ensure images work on Netlify - the plugin handles optimization
+    // Don't set unoptimized to true as Netlify plugin handles it
+    formats: ['image/avif', 'image/webp'],
+    // Ensure proper image serving
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   // Security headers
   async headers() {
