@@ -2,7 +2,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gtmwithferm.netlify.app/sitemap.xml
+Sitemap: https://gtmwithferm.com/sitemap.xml
 
 # Disallow admin or private areas if you add them later
 # Disallow: /admin/
