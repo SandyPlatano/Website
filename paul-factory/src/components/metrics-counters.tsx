@@ -1,22 +1,14 @@
 "use client";
 
-<<<<<<< HEAD
 import { cn } from "@/lib/cn";
 import type { Metric } from "@/content/metrics";
 
-=======
-import type { Metric } from "@/content/metrics";
-
-// Stub component for metrics counters
-// TODO: Implement metrics counters component
->>>>>>> fee0d70fb46ed3c6d5d9d5be632469ad43ddb08b
 type MetricsCountersProps = {
   metrics: Metric[];
   className?: string;
 };
 
 export default function MetricsCounters({ metrics, className }: MetricsCountersProps) {
-<<<<<<< HEAD
   return (
     <div className={cn("grid grid-cols-1 gap-4 sm:grid-cols-3", className)}>
       {metrics.map((metric, index) => (
@@ -39,8 +31,4 @@ export default function MetricsCounters({ metrics, className }: MetricsCountersP
       ))}
     </div>
   );
-=======
-  return null;
->>>>>>> fee0d70fb46ed3c6d5d9d5be632469ad43ddb08b
 }
-

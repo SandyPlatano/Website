@@ -2,10 +2,9 @@
   # Base directory: Set to "paul-factory" in Netlify dashboard if deploying from repo root
   # If netlify.toml is in the project root, base = "." works
   base = "."
-  # Build command (npm install runs automatically, but we specify it to ensure .npmrc is used)
+  # Build command
   command = "npm run build"
-  # Publish directory: Next.js plugin handles this automatically
-  # The plugin will use the correct output directory
+  # Publish directory: Next.js plugin will override this, but we set it for compatibility
   publish = ".next"
 
 # Next.js runtime plugin (REQUIRED for Next.js App Router)

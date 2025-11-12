@@ -1,13 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-<<<<<<< HEAD
-=======
-  output: 'export', // Static export for Firebase Hosting
-  transpilePackages: ['@appletosolutions/reactbits'],
->>>>>>> fee0d70fb46ed3c6d5d9d5be632469ad43ddb08b
   images: {
-    unoptimized: true, // Required for static export
     remotePatterns: [
       {
         protocol: "https",
