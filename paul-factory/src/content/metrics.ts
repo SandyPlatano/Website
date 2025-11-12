@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export type Metric = {
   label: string;
   value: string | number;
@@ -21,4 +22,16 @@ export const defaultMetrics: Metric[] = [
     description: "Revenue signals tracked"
   }
 ];
+=======
+// Metrics type definition
+export type Metric = {
+  id: string;
+  label: string;
+  value: number;
+  unit?: string;
+};
+
+// Empty metrics array for now
+export const metrics: Metric[] = [];
+>>>>>>> fee0d70fb46ed3c6d5d9d5be632469ad43ddb08b
 
