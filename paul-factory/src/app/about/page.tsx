@@ -40,11 +40,11 @@ export default function AboutPage() {
       />
 
       <PageSection innerClassName="!pt-8 pb-20 md:!pt-10 md:pb-24 lg:!pt-12 lg:pb-28">
-        <div className="w-full max-w-3xl space-y-6 rounded-3xl border border-sky-400/40 bg-[#03111F] p-6 text-white md:max-w-5xl md:p-10 md:space-y-8 lg:max-w-none lg:h-full lg:p-12">
+        <div className="mx-auto w-full max-w-[280px] space-y-6 rounded-3xl border border-sky-400/40 bg-[#03111F] p-6 text-white sm:max-w-sm md:max-w-2xl md:space-y-8 md:p-10 lg:max-w-4xl lg:p-12">
           <div className="space-y-3">
             <h2 className="text-xl font-semibold text-white md:text-2xl">Tool stack</h2>
           </div>
-          <div className="mt-6">
+          <div className="mt-6 w-full overflow-hidden">
             <LogoLoop
               logos={toolLogos}
               speed={90}
@@ -56,6 +56,7 @@ export default function AboutPage() {
               fadeOutColor="#03111F"
               ariaLabel="Tool stack logos"
               className="py-2"
+              width="100%"
             />
           </div>
         </div>

@@ -92,10 +92,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${ebGaramond.variable}`}>
-      <body>
-        <div className="flex min-h-screen flex-col">
+      <body className="relative">
+        <div className="flex min-h-screen flex-col relative">
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 relative z-10">{children}</main>
           <Footer />
         </div>
       </body>

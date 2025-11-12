@@ -38,12 +38,17 @@ export default function SectionHeading({
           {eyebrow}
         </p>
       ) : null}
-      <h2 className={titleSizeClass}>{title}</h2>
+      <h2 className={cn(
+        titleSizeClass,
+        "bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent font-bold"
+      )}>
+        {title}
+      </h2>
       {description ? (
         <p
           className={cn(
             "max-w-2xl text-base md:text-lg",
-            tone === "dark" ? "text-pf-cream/70" : "text-pf-muted",
+            tone === "dark" ? "text-white/80" : "text-gray-700",
             align === "center" ? "mx-auto" : undefined
           )}
         >
