@@ -37,7 +37,7 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <section className={cn("bg-pf-cream", className)}>
-      <Container className={cn("grid gap-8 pt-24 pb-16 md:grid-cols-[1.2fr,1fr] md:items-center md:gap-12 md:pt-32 md:pb-20 lg:gap-16 lg:pt-40 lg:pb-24", containerClassName)}>
+      <Container className={cn("grid gap-8 pt-20 pb-12 md:grid-cols-[1.2fr,1fr] md:items-center md:gap-12 md:pt-28 md:pb-16 lg:gap-16 lg:pt-36 lg:pb-20", containerClassName)}>
         <div className="flex flex-col justify-center space-y-6 md:space-y-8">
           {eyebrow || actionsLogo ? (
             <div className="flex flex-wrap items-center gap-4">

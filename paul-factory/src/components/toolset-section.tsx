@@ -18,13 +18,13 @@ const toolLogos: LogoItem[] = tools.map((tool) => ({
 
 export default function ToolsetSection() {
   return (
-    <PageSection innerClassName="py-16 md:py-20 lg:py-24">
-      <div className="space-y-10 md:space-y-12">
+    <PageSection innerClassName="py-12 md:py-16 lg:py-20">
+      <div className="space-y-8 md:space-y-10">
         <SectionHeading
           eyebrow="Toolset"
           title="Tool stack"
         />
-        <div className="rounded-3xl border border-pf-charcoal/10 bg-white/70 p-6 md:p-8 shadow-card">
+        <div className="rounded-3xl border border-pf-charcoal/10 bg-white/70 p-6 md:p-8 lg:p-10 shadow-card">
           <LogoLoop
             logos={toolLogos}
             speed={90}

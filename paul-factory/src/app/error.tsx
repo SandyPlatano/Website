@@ -35,7 +35,7 @@ export default function Error({
           />
           <button
             onClick={reset}
-            className="rounded-full border border-pf-charcoal/20 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-pf-charcoal transition-colors hover:bg-pf-charcoal hover:text-white"
+            className="rounded-sm border border-pf-charcoal/20 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-pf-charcoal transition-colors hover:bg-pf-charcoal hover:text-white"
           >
             Try again
           </button>

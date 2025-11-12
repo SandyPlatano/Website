@@ -32,13 +32,12 @@ export default function HomePage() {
           alt: "Fermin at the IFA Convention in Las Vegas"
         }}
         actions={[
-          { href: "#projects", label: "View work" },
-          { href: "/contact", label: "Contact" }
+          { href: "#projects", label: "View work" }
         ]}
       />
 
-      <PageSection id="projects" innerClassName="py-16 md:py-20 lg:py-24">
-        <div className="space-y-12 md:space-y-16">
+      <PageSection id="projects" innerClassName="py-12 md:py-16 lg:py-20">
+        <div className="space-y-10 md:space-y-12">
           <SectionHeading
             title="Clay certifications and GTM builds"
             description="Automation playbooks, enrichment workflows, and enablement tools crafted for marketing, sales, and success teams."
@@ -46,7 +45,7 @@ export default function HomePage() {
             size="small"
           />
           <div className="mx-auto w-full max-w-6xl">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:gap-10">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-6 lg:gap-8">
               {allProjects.map((project) => (
                 <ProjectCard key={project.slug} project={project} variant="compact" />
               ))}
@@ -55,15 +54,15 @@ export default function HomePage() {
         </div>
       </PageSection>
 
-      <PageSection id="about" bleed className="bg-primary-background py-16 md:py-20 lg:py-24">
-        <div className="mx-auto w-full max-w-content-wide rounded-3xl bg-white/70 px-6 py-12 shadow-card md:px-10 md:py-16 lg:px-16 lg:py-20">
-          <div className="grid gap-10 lg:grid-cols-1 lg:items-stretch">
-            <div className="w-full max-w-3xl space-y-8 rounded-3xl border border-sky-400/40 bg-[#03111F] p-8 text-white md:max-w-5xl md:p-12 md:space-y-10 lg:max-w-none lg:h-full lg:p-16">
-              <div className="space-y-8 md:space-y-10">
-                <div className="space-y-4">
+      <PageSection id="about" bleed className="bg-primary-background py-12 md:py-16 lg:py-20">
+        <div className="mx-auto w-full max-w-content-wide rounded-3xl bg-white/70 px-6 py-10 shadow-card md:px-10 md:py-12 lg:px-16 lg:py-16">
+          <div className="grid gap-8 lg:grid-cols-1 lg:items-stretch">
+            <div className="w-full max-w-3xl space-y-6 rounded-3xl border border-sky-400/40 bg-[#03111F] p-6 text-white md:max-w-5xl md:p-10 md:space-y-8 lg:max-w-none lg:h-full lg:p-12">
+              <div className="space-y-6 md:space-y-8">
+                <div className="space-y-3 md:space-y-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-sky-200/75">About</p>
                   <h3 className="text-2xl font-semibold uppercase tracking-[0.2em] text-white md:text-3xl">About Ferm</h3>
-                  <div className="space-y-4 md:space-y-5">
+                  <div className="space-y-3 md:space-y-4">
                     <p className="text-sm leading-relaxed text-sky-100/90 md:text-base">
                       Hey, I&apos;m Fermin (Ferm), formerly a personal trainer and massage therapist turned BDR, now an aspiring go-to-market engineer focused on systems that let teams spend more time with customers.
                     </p>
@@ -76,18 +75,18 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="grid gap-4 sm:grid-cols-2 md:gap-5">
-                  <div className="rounded-2xl border border-white/10 bg-white/10 p-5 md:p-6">
+                <div className="grid gap-4 sm:grid-cols-2 md:gap-4">
+                  <div className="rounded-2xl border border-white/10 bg-white/10 p-4 md:p-5">
                     <p className="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-sky-100/70">Current focus</p>
                     <p className="mt-2 text-base font-semibold text-white md:text-lg">Learning Cursor</p>
                   </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/10 p-5 md:p-6">
+                  <div className="rounded-2xl border border-white/10 bg-white/10 p-4 md:p-5">
                     <p className="text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-sky-100/70">Recent win</p>
                     <p className="mt-2 text-base font-semibold text-white md:text-lg">Built this website with Cursor</p>
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-3 sm:flex-row pt-2">
+                <div className="flex flex-col gap-3 sm:flex-row pt-1">
                   <CTAButton 
                     href="/resume.pdf" 
                     label="Download Resume" 
