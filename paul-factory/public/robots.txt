@@ -2,8 +2,7 @@
 User-agent: *
 Allow: /
 
-# TODO: Update this URL with your actual domain before launching
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://gtmwithferm.netlify.app/sitemap.xml
 
 # Disallow admin or private areas if you add them later
 # Disallow: /admin/

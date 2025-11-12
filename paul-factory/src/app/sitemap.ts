@@ -1,14 +1,15 @@
 import { MetadataRoute } from 'next'
 import { siteInfo } from '@/content/site'
 
-// TODO: Update this URL with your actual domain before launching
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com'
+// Site URL - can be overridden with NEXT_PUBLIC_SITE_URL environment variable
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://gtmwithferm.netlify.app'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     '',
     '/about',
     '/clients',
+    '/contact',
     '/legal',
   ].map((route) => ({
     url: `${siteUrl}${route}`,
