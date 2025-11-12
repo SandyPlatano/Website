@@ -32,7 +32,8 @@ export default function HomePage() {
           alt: "Fermin at the IFA Convention in Las Vegas"
         }}
         actions={[
-          { href: "#projects", label: "View work" }
+          { href: "#projects", label: "View work" },
+          { href: "/contact", label: "Contact" }
         ]}
       />
 
