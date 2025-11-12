@@ -1,19 +1,23 @@
+# Netlify configuration for Next.js App Router
+# IMPORTANT: If base directory is set to "paul-factory" in Netlify dashboard,
+# this file is already in that directory, so base = "." is correct
+
 [build]
-  # NOTE: If base directory is set in Netlify dashboard to "paul-factory",
-  # then this netlify.toml file is already in that directory, so base = "." is correct
-  # The publish directory will be relative to the base directory
   base = "."
-  # Build command
   command = "npm run build"
-  # Publish directory: When base directory is "paul-factory" in dashboard,
-  # this should be ".next" (relative to paul-factory directory)
-  # The Next.js plugin will handle routing, but we need to specify the output directory
+  # Publish directory: The Next.js plugin will override this automatically
+  # But we specify it for compatibility
   publish = ".next"
 
 # Next.js runtime plugin (REQUIRED for Next.js App Router)
-# This plugin handles all routing, serverless functions, and static generation
+# This plugin MUST be installed and enabled for routing to work
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+  
+  # Plugin configuration
+  [plugins.inputs]
+    # Let the plugin handle everything automatically
+    nextRuntime = "nodejs18.x"
 
 # Environment variables (set these in Netlify dashboard)
 # [build.environment]
