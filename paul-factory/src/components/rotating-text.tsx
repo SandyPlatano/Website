@@ -189,10 +189,16 @@ const RotatingText = forwardRef<RotatingTextHandle, RotatingTextProps>(
     useEffect(() => {
       if (!auto || texts.length <= 1) return;
 
-      const intervalId = window.setInterval(next, rotationInterval);
+      const intervalId = window.setInterval(() => {
+        setCurrentTextIndex((prevIndex) => {
+          const nextIndex = prevIndex === texts.length - 1 ? (loop ? 0 : prevIndex) : prevIndex + 1;
+          if (onNext && nextIndex !== prevIndex) onNext(nextIndex);
+          return nextIndex;
+        });
+      }, rotationInterval);
 
       return () => window.clearInterval(intervalId);
-    }, [next, rotationInterval, auto, texts.length]);
+    }, [rotationInterval, auto, texts.length, loop, onNext]);
 
     return (
       <motion.span
@@ -201,7 +207,29 @@ const RotatingText = forwardRef<RotatingTextHandle, RotatingTextProps>(
         transition={transition}
         {...rest}
       >
-        <span className="sr-only">{currentText}</span>
+        <span 
+          className="sr-only" 
+          style={{ 
+            position: 'absolute', 
+            left: '-10000px', 
+            width: '1px', 
+            height: '1px', 
+            padding: 0, 
+            margin: 0, 
+            overflow: 'hidden', 
+            clip: 'rect(0, 0, 0, 0)', 
+            clipPath: 'inset(50%)',
+            whiteSpace: 'nowrap', 
+            borderWidth: 0, 
+            visibility: 'hidden', 
+            pointerEvents: 'none',
+            opacity: 0,
+            zIndex: -1
+          }} 
+          aria-hidden="true"
+        >
+          {currentText}
+        </span>
         <AnimatePresence mode={animatePresenceMode} initial={animatePresenceInitial}>
           <motion.span
             key={currentTextIndex}

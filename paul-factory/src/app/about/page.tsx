@@ -42,7 +42,6 @@ export default function AboutPage() {
       <PageSection innerClassName="!pt-8 pb-20 md:!pt-10 md:pb-24 lg:!pt-12 lg:pb-28">
         <div className="w-full max-w-3xl space-y-6 rounded-3xl border border-sky-400/40 bg-[#03111F] p-6 text-white md:max-w-5xl md:p-10 md:space-y-8 lg:max-w-none lg:h-full lg:p-12">
           <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">Toolset</p>
             <h2 className="text-xl font-semibold text-white md:text-2xl">Tool stack</h2>
           </div>
           <div className="mt-6">

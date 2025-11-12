@@ -97,4 +97,23 @@ a {
   color: theme("colors.pf-charcoal");
 }
 
+/* Ensure sr-only class works properly - multiple hiding techniques */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border-width: 0 !important;
+  left: -10000px !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
 

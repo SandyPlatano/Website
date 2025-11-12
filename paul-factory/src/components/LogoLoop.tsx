@@ -143,10 +143,10 @@ const useAnimationLoop = (
       window.matchMedia &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    const seqSize = isVertical ? seqHeight : seqWidth;
-
-    if (seqSize > 0) {
-      offsetRef.current = ((offsetRef.current % seqSize) + seqSize) % seqSize;
+    // Initialize offset if dimensions are available
+    const currentSeqSize = isVertical ? seqHeight : seqWidth;
+    if (currentSeqSize > 0) {
+      offsetRef.current = ((offsetRef.current % currentSeqSize) + currentSeqSize) % currentSeqSize;
       const transformValue = isVertical
         ? `translate3d(0, ${-offsetRef.current}px, 0)`
         : `translate3d(${-offsetRef.current}px, 0, 0)`;
@@ -173,9 +173,12 @@ const useAnimationLoop = (
       const easingFactor = 1 - Math.exp(-deltaTime / ANIMATION_CONFIG.SMOOTH_TAU);
       velocityRef.current += (target - velocityRef.current) * easingFactor;
 
-      if (seqSize > 0) {
+      // Recalculate seqSize in case it changed
+      const currentSeqSize = isVertical ? seqHeight : seqWidth;
+      
+      if (currentSeqSize > 0) {
         let nextOffset = offsetRef.current + velocityRef.current * deltaTime;
-        nextOffset = ((nextOffset % seqSize) + seqSize) % seqSize;
+        nextOffset = ((nextOffset % currentSeqSize) + currentSeqSize) % currentSeqSize;
         offsetRef.current = nextOffset;
 
         const transformValue = isVertical
@@ -276,6 +279,19 @@ export const LogoLoop = React.memo<LogoLoopProps>(
     useResizeObserver(updateDimensions, [containerRef, seqRef], [logos, gap, logoHeight, isVertical]);
 
     useImageLoader(seqRef, updateDimensions, [logos, gap, logoHeight, isVertical]);
+
+    // Force dimension calculation on mount and after a short delay
+    useEffect(() => {
+      // Initial calculation
+      updateDimensions();
+      
+      // Recalculate after a short delay to ensure DOM is ready
+      const timeoutId = setTimeout(() => {
+        updateDimensions();
+      }, 100);
+      
+      return () => clearTimeout(timeoutId);
+    }, [updateDimensions]);
 
     useAnimationLoop(trackRef, targetVelocity, seqWidth, seqHeight, isHovered, effectiveHoverSpeed, isVertical);
 

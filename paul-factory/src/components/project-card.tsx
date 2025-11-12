@@ -52,7 +52,32 @@ export default function ProjectCard({ project, variant = "featured", className }
             </div>
           </div>
           <div className="relative z-10 flex flex-1 flex-col gap-3 p-5">
-            <Link href={`/projects/${project.slug}`} className="block">
+            {project.websiteUrl ? (
+              <Link href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="block">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <h3 className="text-lg font-semibold text-white">
+                      {project.title}
+                    </h3>
+                    {project.title.startsWith("Clay") && (
+                      <div className="flex items-center shrink-0">
+                        <Image
+                          src="/clay-logo/Clay_Logo_Primary_Blk.png"
+                          alt="Clay logo"
+                          width={79}
+                          height={25}
+                          className="h-[18px] w-auto object-contain brightness-0 invert"
+                          unoptimized
+                        />
+                      </div>
+                    )}
+                  </div>
+                  <p className="text-[0.9rem] text-sky-100/80">
+                    {project.summary}
+                  </p>
+                </div>
+              </Link>
+            ) : (
               <div className="space-y-2">
                 <div className="flex items-center gap-3 flex-wrap">
                   <h3 className="text-lg font-semibold text-white">
@@ -75,7 +100,7 @@ export default function ProjectCard({ project, variant = "featured", className }
                   {project.summary}
                 </p>
               </div>
-            </Link>
+            )}
             {project.websiteUrl && (
               <div className="mt-auto pt-2">
                 <CTAButton
@@ -137,7 +162,51 @@ export default function ProjectCard({ project, variant = "featured", className }
               variant === "compact" ? "gap-3 p-5" : "gap-4 p-8"
             )}
           >
-            <Link href={`/projects/${project.slug}`} className="block">
+            {project.websiteUrl ? (
+              <Link href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="block">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <h3
+                      className={cn(
+                        "font-semibold text-pf-charcoal",
+                        variant === "compact" ? "text-lg" : "text-2xl"
+                      )}
+                    >
+                      {project.title}
+                    </h3>
+                    {project.title.startsWith("Clay") && (
+                      <div className="flex items-center shrink-0">
+                        <Image
+                          src="/clay-logo/Clay_Logo_Primary_Blk.png"
+                          alt="Clay logo"
+                          width={79}
+                          height={25}
+                          className="h-[18px] w-auto object-contain"
+                          unoptimized
+                        />
+                      </div>
+                    )}
+                    {project.slug === "revenue-research-app" && (
+                      <Image
+                        src="/cursor-brand-assets/logos/cube-2d-black.svg"
+                        alt="Cursor logo"
+                        width={24}
+                        height={24}
+                        className="h-6 w-6 flex-shrink-0"
+                      />
+                    )}
+                  </div>
+                  <p
+                    className={cn(
+                      "text-pf-muted",
+                      variant === "compact" ? "text-[0.9rem]" : "text-base"
+                    )}
+                  >
+                    {project.summary}
+                  </p>
+                </div>
+              </Link>
+            ) : (
               <div className="space-y-2">
                 <div className="flex items-center gap-3 flex-wrap">
                   <h3
@@ -179,7 +248,7 @@ export default function ProjectCard({ project, variant = "featured", className }
                   {project.summary}
                 </p>
               </div>
-            </Link>
+            )}
             {project.websiteUrl && (
               <div className="mt-auto pt-2">
                 <CTAButton

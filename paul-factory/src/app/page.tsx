@@ -5,8 +5,20 @@ import ProjectCard from "@/components/project-card";
 import CTAButton from "@/components/cta-button";
 import RotatingText from "@/components/rotating-text";
 import HeroSection from "@/components/hero-section";
-import ToolsetSection from "@/components/toolset-section";
+import LogoLoop, { type LogoItem } from "@/components/LogoLoop";
 import { featuredProjects } from "@/content/projects";
+
+const tools = ["Cursor", "Apify", "ChatGPT", "Claude", "Clay", "Cognism", "Gong Engage", "Salesforce", "Superwhisper", "Tella", "Vidyard", "ZoomInfo"];
+
+const toolLogos: LogoItem[] = tools.map((tool) => ({
+  node: (
+    <span className="rounded-full border border-white/20 bg-white/10 backdrop-blur-sm px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white whitespace-nowrap hover:bg-white/20 transition-colors">
+      {tool}
+    </span>
+  ),
+  title: tool,
+  ariaLabel: tool
+}));
 
 export default function HomePage() {
   const allProjects = featuredProjects;
@@ -23,6 +35,8 @@ export default function HomePage() {
               rotationInterval={3000}
               staggerDuration={0.04}
               mainClassName="inline-flex text-pf-accent"
+              auto={true}
+              loop={true}
             />
           </>
         }
@@ -86,6 +100,26 @@ export default function HomePage() {
                   </div>
                 </div>
 
+                <div className="space-y-3">
+                  <h2 className="text-xl font-semibold text-white md:text-2xl">Tool stack</h2>
+                  <div className="mt-6 w-full overflow-hidden">
+                    <LogoLoop
+                      logos={toolLogos}
+                      speed={120}
+                      direction="left"
+                      gap={24}
+                      logoHeight={32}
+                      pauseOnHover
+                      scaleOnHover
+                      fadeOut
+                      fadeOutColor="#03111F"
+                      ariaLabel="Tool stack logos"
+                      className="py-2"
+                      width="100%"
+                    />
+                  </div>
+                </div>
+
                 <div className="flex flex-col gap-3 sm:flex-row pt-1">
                   <CTAButton 
                     href="/resume.pdf" 
@@ -99,8 +133,6 @@ export default function HomePage() {
           </div>
         </div>
       </PageSection>
-
-      <ToolsetSection />
     </>
   );
 }

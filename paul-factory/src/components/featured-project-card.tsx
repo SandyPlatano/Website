@@ -59,7 +59,7 @@ export default function FeaturedProjectCard({ project, highlights = [], hideTags
                       alt="Clay logo"
                       width={79}
                       height={25}
-                      className="h-[18px] w-auto object-contain brightness-0 invert opacity-90"
+                      className="h-[18px] w-auto object-contain brightness-0 invert"
                       unoptimized
                     />
                   </div>
